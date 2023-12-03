@@ -1,18 +1,46 @@
-import './App.css'
-import { GiCarWheel } from 'react-icons/gi'
+import { Fragment } from 'react'
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
+import { PUBLIC_ROUTES } from './routes/routes'
+import DefaultLayout from './layout/DefaultLayout/Defaultlayout'
+import routes from './config/routes'
 
 function App() {
   return (
-    <div className="">
-      <h1>Hello</h1>
-      <h1 className="text-3xl font-bold text-red-600 underline ">
-        Hello world!
-      </h1>
-      <h1 className="my-4 ml-10 bg-gray-600 p-10 text-xl uppercase tracking-widest text-white">
-        Xin chao VietNam
-      </h1>
-      <span className="h-[100px] w-[200px] block m-5 my-3 mt-2 p-2 px-4">hẹanscjasnjc <GiCarWheel color='#dc2626' fontSize='80px'/></span>
-    </div>
+    <Router>
+      <div className="App">
+        {/* <div className="bg-slate-800 text-white">
+          <NavLink to={routes.discover} > Discover</NavLink>
+          <NavLink to={routes.songs} > Songs</NavLink>
+          <NavLink to={routes.author} > Author</NavLink>
+          <NavLink to={routes.favourite} > Favourite</NavLink>
+          <NavLink to={routes.album} > Album</NavLink>
+        </div> */}
+        <Routes>
+          {PUBLIC_ROUTES.map((route, index) => {
+            const Page = route.component
+            let Layout = DefaultLayout
+
+            if (route.layout) {
+              Layout = route.layout
+            } else if (route.layout === null) {
+              Layout = Fragment
+            }
+
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            )
+          })}
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
