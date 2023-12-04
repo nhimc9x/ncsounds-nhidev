@@ -1,0 +1,7 @@
+.ncs-menu-item {
+  @apply mt-4 ml-4 flex items-center gap-4 font-normal text-ncs-text-color text-lg;
+}
+
+.ncs-menu-item.active {
+  @apply text-ncs-active-color;
+}

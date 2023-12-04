@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'ncs-font-Kanit' : ['Kanit', 'sans-serif']
+      },
       colors: {
         'ncs-primary-color': '#1d2238',
         'ncs-secondary-color': '#262d47',

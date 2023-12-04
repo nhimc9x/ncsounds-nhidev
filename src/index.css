@@ -1,7 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   font-size: 16px;
+  @apply font-ncs-font-Kanit;
+}
+
+#text-12 {
+  animation: tedt ease-in-out 2.6s infinite;
+}
+
+@keyframes tedt {
+  from {
+    background: -webkit-linear-gradient(right, #32ff7e,#c56cf0, #18dcff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  to {
+    background: -webkit-linear-gradient(right, #18dcff,#c56cf0, #32ff7e);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
 }
