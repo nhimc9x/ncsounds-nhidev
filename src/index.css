@@ -4,23 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
   @apply font-ncs-font-Kanit;
 }
 
-#text-12 {
+#ncs-name, #ncs-name--rps {
   animation: tedt ease-in-out 2.6s infinite;
 }
 
 @keyframes tedt {
-  from {
-    background: -webkit-linear-gradient(right, #32ff7e,#c56cf0, #18dcff);
+  0%, 100%{
+    background: -webkit-linear-gradient(right, #32ff7e, #18dcff);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
-  to {
-    background: -webkit-linear-gradient(right, #18dcff,#c56cf0, #32ff7e);
+  50% {
+    background: -webkit-linear-gradient(right, #18dcff, #32ff7e);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }

@@ -1,5 +1,5 @@
 .ncs-menu-item {
-  @apply mt-4 ml-4 flex items-center gap-4 font-normal text-ncs-text-color text-lg;
+  @apply mt-4 mdl:ml-4 ml-0 flex items-center mdl:justify-start justify-center gap-4 font-normal text-ncs-text-color mdl:text-lg text-2xl;
 }
 
 .ncs-menu-item.active {

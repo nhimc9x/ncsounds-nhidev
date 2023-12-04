@@ -3,6 +3,11 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        'sms': '576px',
+        'mdl': '960px'
+      },
       fontFamily: {
         'ncs-font-Kanit' : ['Kanit', 'sans-serif']
       },
