@@ -1,8 +1,10 @@
-import React from 'react'
-
+import Header from '~/components/Header/Header'
 function Discover() {
   return (
-    <div>Discover</div>
+    <div>
+      <Header />
+      <div className=""></div>
+    </div>
   )
 }
 
