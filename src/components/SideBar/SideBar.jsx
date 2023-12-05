@@ -9,10 +9,9 @@ import logo_gif from '../../assets/Yw76.gif'
 function SideBar() {
   return (
     <div className="float-left h-full mdl:w-[300px] w-[80px] transition-all duration-300 bg-ncs-secondary-color mdl:px-8 px-1 py-2">
-      <div className="flex justify-center items-center gap-2">
-        <img className='h-8 mdl:block hidden' src={logo_gif} alt="logo_gif" />
-        <div id='ncs-name' className="text-3xl mdl:block hidden font-semibold uppercase tracking-wider text-ncs-active-color">NCSounds</div>
-        <div id='ncs-name--rps' className="text-3xl mdl:hidden block font-semibold uppercase tracking-wider text-ncs-active-color">NCS</div>
+      <div className="text-3xl font-semibold uppercase tracking-wider text-ncs-active-color text-center">
+        <div id='ncs-name' className="mdl:block hidden">NCSounds</div>
+        <div id='ncs-name--rps' className="mdl:hidden block">NCS</div>
       </div>
       <div className="mdl:mt-14 mt-8">
         <div className="font-medium text-xl text-ncs-text-color">Browse</div>

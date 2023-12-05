@@ -3,10 +3,10 @@ import { FaRegUserCircle } from 'react-icons/fa'
 
 function Header() {
   return (
-    <div className="flex items-center justify-between pr-4">
-      <div className="flex items-center bg-transparent w-[300px] rounded-full border border-ncs-text-color overflow-hidden">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center bg-transparent w-[300px] group rounded-full border border-ncs-text-color overflow-hidden">
         <input className='w-full text-sm text-ncs-active-color placeholder:font-light px-4 bg-transparent outline-none' type="text" placeholder='Search Tracks & Artist' />
-        <div className="text-lg p-2 text-ncs-active-color cursor-pointer">
+        <div className="text-lg p-2 text-ncs-text-color cursor-pointer hover:text-ncs-active-color group-focus-within:text-ncs-active-color">
           <FiSearch />
         </div>
       </div>
