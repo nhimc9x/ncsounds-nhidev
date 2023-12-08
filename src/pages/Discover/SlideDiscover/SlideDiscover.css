@@ -1,0 +1,9 @@
+.custom-wrapper .slide-discover-item {
+  @apply brightness-[.4] rounded-lg overflow-hidden;
+}
+.custom-wrapper .slide-discover-item.is-active {
+  @apply brightness-100 border border-ncs-active-color;
+}
+.slide-discover-item .slide-discover-img {
+  @apply w-full h-full object-cover object-center;
+}
