@@ -11,7 +11,7 @@ import { CiSquareChevRight } from 'react-icons/ci'
 import { CiSquareChevLeft } from 'react-icons/ci'
 
 function SlideDiscover({ dataApis }) {
-  let avatarAuthor = [...new Set(dataApis.map(data => data.links.images[0].url))].splice(0, 21)
+  let avatarAuthor = [...new Set(dataApis.map(data => data?.links?.images[0]?.url))].splice(0, 21)
   return (
     <div className="">
       <Splide
