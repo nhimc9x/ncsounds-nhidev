@@ -4,7 +4,7 @@ import routes from '~/config/routes'
 
 function NewSongs({ dataApis }) {
   // Lấy 20 bài hát mới nhất
-  let dataNewSongs = dataApis.slice(-20)
+  let dataNewSongs = dataApis.slice(-15)
 
   return (
     <div className="mt-8">
@@ -19,7 +19,7 @@ function NewSongs({ dataApis }) {
           </div>
         </NavLink>
       </div>
-      <div className="my-3 grid xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 grid-cols-2 gap-3 px-0 2xl:gap-6 2xl:px-6">
+      <div className="my-3 grid 2xl:grid-cols-6 xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 grid-cols-2 gap-3 px-0 2xl:gap-4 2xl:px-8">
         {dataNewSongs.map((data, index) => (
           <div key={index} className="h-40 mb-1 cursor-pointer">
             <div className="h-[120px] overflow-hidden rounded-md group">

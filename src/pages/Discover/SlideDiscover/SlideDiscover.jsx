@@ -11,13 +11,18 @@ import { CiSquareChevRight } from 'react-icons/ci'
 import { CiSquareChevLeft } from 'react-icons/ci'
 
 function SlideDiscover({ dataApis }) {
-  let avatarAuthor = [...new Set(dataApis.map(data => data?.links?.images[0]?.url))].splice(0, 21)
+  let uniqueAuthors = [...new Set(dataApis.map(data => data?.author))].splice(0, 21)
+  let dataAuthor = uniqueAuthors.map(author => {
+    const dataForAuthor = dataApis.find(data => data.author === author)
+    return { author: author, imageUrl: dataForAuthor?.links?.images[0]?.url }
+  })
+  console.log(dataAuthor)
   return (
     <div className="">
       <Splide
         options={{
           type: 'loop',
-          perPage: 6,
+          perPage: 7,
           breakpoints: {
             576: {
               perPage: 2
@@ -30,11 +35,14 @@ function SlideDiscover({ dataApis }) {
             },
             1280: {
               perPage: 5
+            },
+            1536: {
+              perPage: 6
             }
           },
           perMove: 1,
           gap: '0.8rem',
-          height: '120px',
+          height: '140px',
           autoplay: true,
           speed: 1000,
           interval: 4000,
@@ -48,10 +56,13 @@ function SlideDiscover({ dataApis }) {
             <button className="splide__arrow--next hover:text-white"><CiSquareChevRight /></button>
           </div>
           <SplideTrack>
-            {avatarAuthor.map((data, index) =>
-              (<SplideSlide key={index} className='slide-discover-item'>
-                <img className='slide-discover-img' src={data} alt={`Image ${index}`} />
-              </SplideSlide>)
+            {dataAuthor.map((data, index) =>
+              (
+                <SplideSlide key={index} className='slide-discover-item'>
+                  <img className='slide-discover-img' src={data.imageUrl} alt={`Image ${data.author}`} />
+                  <div className="slide-discover-text">{data.author}</div>
+                </SplideSlide>
+              )
             )}
           </SplideTrack>
         </div>

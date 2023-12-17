@@ -8,7 +8,7 @@ function DefaultLayout({ children }) {
       <SideBar />
 
       <div className="h-full overflow-y-auto bg-ncs-primary-color py-4 mdl:px-8 px-4">
-        <div className="h-[1400px]"> {children} </div>
+        <div className=""> {children} </div>
       </div>
     </div>
   )

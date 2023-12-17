@@ -13,6 +13,21 @@ html {
   @apply font-ncs-font-Kanit;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #262d47;
+}
+::-webkit-scrollbar-thumb {
+  background: #80f0ff;
+  border-radius: 20px;
+}
+::selection {
+  color: #1d2238;
+  background-color: #18dcff;
+}
+
 #ncs-name, #ncs-name--rps {
   animation: tedt ease-in-out 2.6s infinite;
 }

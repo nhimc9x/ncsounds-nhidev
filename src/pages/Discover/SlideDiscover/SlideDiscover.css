@@ -1,9 +1,15 @@
 .custom-wrapper .slide-discover-item {
-  @apply brightness-[.4] rounded-lg overflow-hidden;
+  @apply brightness-[.4];
 }
 .custom-wrapper .slide-discover-item.is-active {
-  @apply brightness-100 border border-ncs-active-color;
+  @apply brightness-100;
 }
 .slide-discover-item .slide-discover-img {
-  @apply w-full h-full object-cover object-center;
+  @apply w-full h-28 rounded-lg object-cover object-center;
+}
+.slide-discover-item .slide-discover-text {
+  @apply text-ncs-text-color text-sm m-1;
+}
+.custom-wrapper .slide-discover-item.is-active .slide-discover-text {
+  @apply text-white;
 }
