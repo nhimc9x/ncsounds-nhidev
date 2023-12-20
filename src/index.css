@@ -28,12 +28,14 @@ html {
   background-color: #18dcff;
 }
 
-#ncs-name, #ncs-name--rps {
+#ncs-name,
+#ncs-name--rps {
   animation: tedt ease-in-out 2.6s infinite;
 }
 
 @keyframes tedt {
-  0%, 100%{
+  0%,
+  100% {
     background: -webkit-linear-gradient(right, #32ff7e, #18dcff);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -43,4 +45,10 @@ html {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
+}
+.text-limit {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

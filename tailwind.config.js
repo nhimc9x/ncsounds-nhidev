@@ -9,13 +9,22 @@ export default {
         'mdl': '960px'
       },
       fontFamily: {
-        'ncs-font-Kanit' : ['Kanit', 'sans-serif']
+        'ncs-font-Kanit': ['Kanit', 'sans-serif']
       },
       colors: {
         'ncs-primary-color': '#1d2238',
         'ncs-secondary-color': '#262d47',
         'ncs-text-color': '#a3a1be',
         'ncs-active-color': '#80f0ff'
+      },
+      animation: {
+        'show-up': 'showUp .4s ease-in-out'
+      },
+      keyframes: {
+        'showUp': {
+          'from': { transform: 'translateY(100%)', opacity: 0.5 },
+          'to': { transform: 'translateY(0)', opacity: 1 }
+        }
       }
     }
   },
