@@ -6,17 +6,16 @@ import { FaSquareXTwitter } from 'react-icons/fa6'
 
 function Footer() {
   return (
-    <div className="mt-14 bg-gray-900 pt-4 pb-2 px-2 mx-auto w-full max-w-screen-2xl text-center">
-      <div className="flex items-center justify-center gap-1 mb-4">
+    <div className="mt-8 px-2 w-full max-w-screen-2xl mx-auto text-center">
+      <div className="flex items-center justify-center gap-1 mb-2">
+        <div className="h-[1px] bg-ncs-secondary-color w-full mr-2"></div>
         <img className="w-10" src={giphy} alt="" />
         <div className="text-2xl tracking-wider text-ncs-active-color">NCSounds</div>
+        <div className="h-[1px] bg-ncs-secondary-color w-full ml-2"></div>
       </div>
-      <div className="flex justify-center items-center gap-3 mb-8">
+      <div className="flex justify-center items-center gap-2 mb-6">
         <a href="" className="text-gray-700 text-3xl hover:text-ncs-active-color transition-all duration-200">
           <FaFacebookSquare />
-        </a>
-        <a href="" className="text-gray-700 text-3xl hover:text-ncs-active-color transition-all duration-200">
-          <FaSquareXTwitter />
         </a>
         <a href="" className="text-gray-700 text-3xl hover:text-ncs-active-color transition-all duration-200">
           <FaGithubSquare />
