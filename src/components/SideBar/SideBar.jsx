@@ -18,7 +18,7 @@ function SideBar() {
 
         <MenuItem to={routes.discover} icon={<TbMusicSearch />} title={'Discover'} />
         <MenuItem to={routes.songs} icon={<LiaHeadphonesSolid />} title={'Songs'} />
-        <MenuItem to={routes.author} icon={<ImUser />} title={'Author'} />
+        <MenuItem to={routes.authors} icon={<ImUser />} title={'Authors'} />
 
         <div className="font-medium text-xl text-ncs-text-color mdl:mt-10 mt-8">Playlist</div>
 

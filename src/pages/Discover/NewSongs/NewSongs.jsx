@@ -2,9 +2,9 @@ import { FaAngleRight } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import routes from '~/config/routes'
 
-function NewSongs({ dataApis }) {
+function NewSongs({ dataSongs }) {
   // Lấy 20 bài hát mới nhất
-  let dataNewSongs = dataApis.slice(-15)
+  let dataNewSongs = dataSongs.slice(-15)
 
   return (
     <div className="mt-8">

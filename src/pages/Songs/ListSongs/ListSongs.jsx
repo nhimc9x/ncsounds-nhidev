@@ -1,12 +1,8 @@
 import { LuMusic } from 'react-icons/lu'
 import { FaPlay } from 'react-icons/fa'
-import { MdCloudDownload } from 'react-icons/md'
-import { GoHeartFill } from 'react-icons/go'
-import { IoAlbums } from 'react-icons/io5'
-import { BsThreeDotsVertical } from 'react-icons/bs'
-import TooltipCustom from '~/components/TooltipCustom/TooltipCustom'
 import { useEffect, useState } from 'react'
 import './ListSongs.css'
+import ToolBar from '~/components/ToolBar/ToolBar'
 
 function ListSongs({ dataApis }) {
 
@@ -83,31 +79,8 @@ function ListSongs({ dataApis }) {
               </div>
             </div>
 
-            <div className="flex items-center text-base text-ncs-text-color gap-1">
+            <ToolBar linkDownload={data.url} />
 
-              <TooltipCustom decription="Add to favourite">
-                <div className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
-                  <GoHeartFill />
-                </div>
-              </TooltipCustom>
-              <TooltipCustom decription="Add to album">
-                <div className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
-                  <IoAlbums />
-                </div>
-              </TooltipCustom>
-              <TooltipCustom decription="Download">
-                <a href={data.url} className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
-                  <MdCloudDownload />
-                </a>
-              </TooltipCustom>
-
-              <TooltipCustom decription="Show more">
-                <div className="flex sms:hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
-                  <BsThreeDotsVertical />
-                </div>
-              </TooltipCustom>
-
-            </div>
           </div>
         ))}
       </div>

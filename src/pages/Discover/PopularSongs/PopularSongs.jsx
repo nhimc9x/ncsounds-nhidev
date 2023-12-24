@@ -1,10 +1,10 @@
 import { FaPlay } from 'react-icons/fa'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 
-function PopularSongs({ dataApis }) {
-
+function PopularSongs({ dataSongs }) {
+  let clonedSongs = [...dataSongs]
   // Lấy 5 bài hát có số views cao nhất
-  let dataPupolarSongs = [...dataApis.sort((a, b) => b.views - a.views)].splice(0, 5)
+  let dataPupolarSongs = [...clonedSongs.sort((a, b) => b.views - a.views)].splice(0, 5)
 
   return (
     <div className="h-32p col-span-5 xl:col-span-3">
