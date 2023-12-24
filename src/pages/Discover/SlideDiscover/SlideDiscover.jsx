@@ -10,13 +10,12 @@ import './SlideDiscover.css'
 import { CiSquareChevRight } from 'react-icons/ci'
 import { CiSquareChevLeft } from 'react-icons/ci'
 
-function SlideDiscover({ dataApis }) {
-  let uniqueAuthors = [...new Set(dataApis.map(data => data?.author))].splice(0, 21)
+function SlideDiscover({ dataSongs }) {
+  let uniqueAuthors = [...new Set(dataSongs.map(data => data?.author))].splice(0, 21)
   let dataAuthor = uniqueAuthors.map(author => {
-    const dataForAuthor = dataApis.find(data => data.author === author)
+    const dataForAuthor = dataSongs.find(data => data.author === author)
     return { author: author, imageUrl: dataForAuthor?.links?.images[0]?.url }
   })
-  console.log(dataAuthor)
   return (
     <div className="">
       <Splide

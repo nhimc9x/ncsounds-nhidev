@@ -1,7 +1,7 @@
 const routes = {
   discover: '/',
   songs: '/songs',
-  author: '/author',
+  authors: '/authors',
   favourite: '/favourite',
   album: '/album'
 }

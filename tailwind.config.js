@@ -18,11 +18,16 @@ export default {
         'ncs-active-color': '#80f0ff'
       },
       animation: {
-        'show-up': 'showUp .4s ease-in-out'
+        'show-up': 'showUp .4s ease-in-out',
+        'show-down': 'showDown .4s ease-in-out'
       },
       keyframes: {
         'showUp': {
           'from': { transform: 'translateY(100%)', opacity: 0.5 },
+          'to': { transform: 'translateY(0)', opacity: 1 }
+        },
+        'showDown': {
+          'from': { transform: 'translateY(-10px)', opacity: 0.5 },
           'to': { transform: 'translateY(0)', opacity: 1 }
         }
       }
