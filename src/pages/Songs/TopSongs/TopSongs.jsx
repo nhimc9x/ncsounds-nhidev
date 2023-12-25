@@ -36,10 +36,9 @@ function TopSongs({ dataApis }) {
               <div
                 style={{
                   WebkitTextStrokeWidth: '1.4px',
-                  WebkitTextStrokeColor: setNumColor(index),
-                  textShadow: '0px 0px #000000cc'
+                  WebkitTextStrokeColor: setNumColor(index)
                 }}
-                className="absolute left-0 select-none top-0 w-10 leading-9 rounded-ee-md drop-shadow bg-yellow-300 text-center text-4xl font-bold tracking-wider text-transparent"
+                className="absolute left-0 select-none top-0 w-10 rounded-ee-md drop-shadow bg-black/50 backdrop-blur-sm text-center text-4xl font-bold tracking-wider text-transparent"
               >
                 {index + 1}
               </div>
