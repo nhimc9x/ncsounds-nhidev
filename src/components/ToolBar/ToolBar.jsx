@@ -1,8 +1,8 @@
 import { MdCloudDownload } from 'react-icons/md'
 import { GoHeartFill } from 'react-icons/go'
 import { IoAlbums } from 'react-icons/io5'
-import { BsThreeDotsVertical } from 'react-icons/bs'
 import TooltipCustom from '~/components/TooltipCustom/TooltipCustom'
+import ToolBoxCustom from '../ToolBoxCustom/ToolBoxCustom'
 
 function ToolBar({ ...props }) {
   return (
@@ -23,11 +23,7 @@ function ToolBar({ ...props }) {
         </a>
       </TooltipCustom>
 
-      <TooltipCustom decription="Show more">
-        <div className="flex sms:hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
-          <BsThreeDotsVertical />
-        </div>
-      </TooltipCustom>
+      <ToolBoxCustom sx="sms:hidden block" linkDownload={props.linkDownload}/>
     </div>
   )
 }

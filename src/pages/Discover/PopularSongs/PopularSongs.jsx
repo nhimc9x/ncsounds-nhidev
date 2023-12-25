@@ -1,5 +1,6 @@
 import { FaPlay } from 'react-icons/fa'
-import { BsThreeDotsVertical } from 'react-icons/bs'
+import headphoneimg2 from '~/assets/hed.jpg'
+import ToolBoxCustom from '~/components/ToolBoxCustom/ToolBoxCustom'
 
 function PopularSongs({ dataSongs }) {
   let clonedSongs = [...dataSongs]
@@ -7,35 +8,40 @@ function PopularSongs({ dataSongs }) {
   let dataPupolarSongs = [...clonedSongs.sort((a, b) => b.views - a.views)].splice(0, 5)
 
   return (
-    <div className="h-32p col-span-5 xl:col-span-3">
-      <div className="text-xl font-semibold tracking-wide text-white">
-        Popular songs
+    <div className="mt-2 grid grid-cols-5 gap-2">
+      <div className="col-span-5 xl:col-span-3">
+        <div className="text-xl font-semibold tracking-wide text-white">
+          Popular songs
+        </div>
+        <div className="p-2 xl:px-4 2xl:px-8">
+          {dataPupolarSongs.map((data, index) => (
+            <div key={index} className="my-2 flex h-[44px] items-center rounded-lg bg-ncs-secondary-color px-4">
+              <div className="hidden text-[#e84393]">
+                <FaPlay />
+              </div>
+              <div className="">
+                <img
+                  className="h-[36px] w-[36px] rounded-full object-cover object-center"
+                  src={data?.links?.images[1]?.url}
+                  alt=""
+                />
+              </div>
+              <div className="ml-2 text-sm text-white">{data.name}</div>
+              <div className="ml-auto mr-3 hidden text-ncs-text-color text-sm sm:block">
+                {data.author}
+              </div>
+              <ToolBoxCustom sx="ml-auto sm:ml-0" linkDownload={data.url}/>
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="p-2 xl:px-4 2xl:px-8">
-        {dataPupolarSongs.map((data, index) => (
-          <div key={index} className="my-2 flex h-12 items-center rounded-lg bg-ncs-secondary-color px-4">
-            <div className="hidden text-[#e84393]">
-              <FaPlay />
-            </div>
-            <div className="">
-              <img
-                className="h-[40px] w-[40px] rounded-full object-cover object-center"
-                src={data?.links?.images[1]?.url}
-                alt=""
-              />
-            </div>
-            <div className="ml-2 text-ncs-text-color">{data.name}</div>
-            <div className="ml-auto mr-3 hidden text-ncs-text-color sm:block">
-              {data.author}
-            </div>
-            <div className="ml-auto cursor-pointer rounded-full p-1 text-xl text-ncs-text-color transition-all duration-300 hover:bg-ncs-primary-color hover:text-ncs-active-color sm:ml-0">
-              <BsThreeDotsVertical />
-            </div>
-          </div>
-        ))}
+      <div className="col-span-5 xl:pt-8 pt-0 max-h-[306px] xl:col-span-2">
+        <img
+          className="h-full w-full rounded-3xl object-cover object-center"
+          src={headphoneimg2}
+          alt="Headphone Image"
+        />
       </div>
-
     </div>
   )
 }

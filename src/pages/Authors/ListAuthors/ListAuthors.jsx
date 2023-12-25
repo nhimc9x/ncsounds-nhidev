@@ -1,10 +1,9 @@
 import { FaCheck } from 'react-icons/fa'
 import { FcMusic } from 'react-icons/fc'
-import { FaPlay } from 'react-icons/fa'
-import { GoHeartFill } from 'react-icons/go'
 import { BsChevronRight } from 'react-icons/bs'
 import { useState } from 'react'
 import SongsOfAuthor from './SongsOfAuthor/SongsOfAuthor'
+import ActionsBar from './SongsOfAuthor/ActionsBar/ActionsBar'
 
 function ListAuthors({ dataApis }) {
   let uniqueAuthors = [...new Set(dataApis.map(data => data?.author))]
@@ -51,23 +50,7 @@ function ListAuthors({ dataApis }) {
                 </div>
                 <div className="text-sm text-ncs-text-color">{`${getSongsOfAuthor(data.author).length} Songs - ${totalViews(data.author)} Views`}</div>
               </div>
-
-              <div className="flex text-ncs-text-color gap-1 mt-2">
-                <div className="flex items-center h-6 w-6 bg-ncs-primary-color rounded-full overflow-hidden group hover:w-max cursor-pointer">
-                  <div className="text-xs w-6 h-full rounded-full grid place-content-center group-hover:bg-ncs-active-color group-hover:text-ncs-secondary-color transition-all duration-300">
-                    <FaPlay className="relative left-[1px]" />
-                  </div>
-                  <div className="text-sm px-0 w-0 group-hover:px-2 group-hover:w-max text-ncs-primary-color group-hover:text-white transition-colors duration-1000">Play</div>
-                </div>
-
-                <div className="flex items-center h-6 w-6 bg-ncs-primary-color rounded-full overflow-hidden group hover:w-max cursor-pointer">
-                  <div className="text-sm w-6 h-full rounded-full grid place-content-center group-hover:bg-ncs-active-color group-hover:text-ncs-secondary-color transition-all duration-300">
-                    <GoHeartFill className="relative top-[1px]" />
-                  </div>
-                  <div className="text-sm px-0 w-0 group-hover:px-2 group-hover:w-max text-ncs-primary-color group-hover:text-white transition-colors duration-1000">Follow</div>
-                </div>
-              </div>
-
+              <ActionsBar />
             </div>
 
             <div className="text-xl ml-auto pr-4 text-ncs-text-color self-center">
