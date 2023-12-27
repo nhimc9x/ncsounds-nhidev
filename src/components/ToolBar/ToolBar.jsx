@@ -3,10 +3,11 @@ import { GoHeartFill } from 'react-icons/go'
 import { IoAlbums } from 'react-icons/io5'
 import TooltipCustom from '~/components/TooltipCustom/TooltipCustom'
 import ToolBoxCustom from '../ToolBoxCustom/ToolBoxCustom'
+import { handleStopPropagation } from '~/utils/StopPropagation'
 
 function ToolBar({ ...props }) {
   return (
-    <div className="flex items-center text-base text-ncs-text-color gap-1">
+    <div onClick={handleStopPropagation} className="flex items-center text-base text-ncs-text-color gap-1">
       <TooltipCustom decription="Add to favourite">
         <div className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
           <GoHeartFill />

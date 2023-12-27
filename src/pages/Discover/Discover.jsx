@@ -4,20 +4,21 @@ import NewSongs from './NewSongs/NewSongs'
 import PopularSongs from './PopularSongs/PopularSongs'
 import Footer from '~/components/Footer/Footer'
 import HeroBanner from './HeroBanner/HeroBanner'
-import { useState } from 'react'
-import mockData from '~/apis/mock_data.json'
+import { useContext } from 'react'
+import { NCSounds } from '~/utils/Context'
 
 
 function Discover() {
-  const [dataSongs, setDataSongs] = useState([...mockData])
+  const { mockData } = useContext(NCSounds)
+
   return (
     <div>
       <Header />
       <div className="mx-auto w-full max-w-screen-2xl">
         <HeroBanner />
-        <SlideDiscover dataSongs={dataSongs} />
-        <PopularSongs dataSongs={dataSongs} />
-        <NewSongs dataSongs={dataSongs} />
+        <SlideDiscover dataSongs={mockData} />
+        <PopularSongs dataSongs={mockData} />
+        <NewSongs dataSongs={mockData} />
       </div>
       <Footer />
     </div>
