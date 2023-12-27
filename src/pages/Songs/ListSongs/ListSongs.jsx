@@ -1,10 +1,13 @@
 import { LuMusic } from 'react-icons/lu'
 import { FaPlay } from 'react-icons/fa'
-import { useEffect, useState } from 'react'
-import './ListSongs.css'
+import { useEffect, useState, useContext } from 'react'
 import ToolBar from '~/components/ToolBar/ToolBar'
+import { NCSounds } from '~/utils/Context'
+import Rhythm from '~/assets/aniongs.gif'
+import './ListSongs.css'
 
 function ListSongs({ dataApis }) {
+  const { handlePlay, idSong } = useContext(NCSounds)
 
   // Các lựa chọn sắp xếp
   const SORTED_BY = {
@@ -62,24 +65,28 @@ function ListSongs({ dataApis }) {
         </div>
 
         {sortedSongs.map((data, index) => (
-          <div key={index} className="h-[52px] py-1 px-3 border-ncs-secondary-color border-t last:border-b hover:bg-ncs-secondary-color flex justify-between items-center group">
+          <div
+            onClick={() => handlePlay(data?.id)}
+            key={index}
+            className={`songs-item ${idSong === data?.id && 'is-playing'}`}
+          >
             <div className="text-ncs-text-color flex items-center gap-3">
               <div className="">
                 <LuMusic />
               </div>
               <div className="w-9 h-9 relative">
-                <img className="w-full h-full rounded-sm object-cover group-hover:brightness-50" src={data?.links?.images[1]?.url} alt="" />
-                <div className="hidden group-hover:block text-sm absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
-                  <FaPlay />
+                <img className="songs-item-img" src={data?.links?.images[1]?.url} alt="" />
+                <div className="songs-icon-play">
+                  {idSong === data?.id ? <img src={Rhythm} alt="Rhythm" /> : <FaPlay />}
                 </div>
               </div>
               <div className="">
-                <div className="text-sm text-white">{data.name}</div>
-                <div className="text-xs">{data.author}</div>
+                <div className="text-sm text-white">{data?.name}</div>
+                <div className="text-xs">{data?.author}</div>
               </div>
             </div>
 
-            <ToolBar linkDownload={data.url} />
+            <ToolBar linkDownload={data?.url} />
 
           </div>
         ))}

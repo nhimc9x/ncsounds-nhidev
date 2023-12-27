@@ -1,3 +1,21 @@
 .sort-menu-item {
   @apply px-3 cursor-pointer select-none rounded-full border border-ncs-text-color;
 }
+.songs-item {
+  @apply h-[52px] py-1 px-3 border-ncs-secondary-color border-t last:border-b flex justify-between items-center;
+}
+.songs-item-img {
+  @apply w-full h-full rounded-sm object-cover;
+}
+.songs-icon-play {
+  @apply hidden text-sm absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2;
+}
+.songs-item:hover, .songs-item.is-playing {
+  @apply bg-ncs-secondary-color;
+}
+.songs-item:hover .songs-item-img, .songs-item.is-playing .songs-item-img{
+  @apply brightness-50;
+}
+.songs-item:hover .songs-icon-play, .songs-item.is-playing .songs-icon-play {
+  @apply block;
+}

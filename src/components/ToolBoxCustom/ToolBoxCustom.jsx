@@ -4,6 +4,7 @@ import { IoAlbums } from 'react-icons/io5'
 import { useState, useRef, useEffect } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import TooltipCustom from '../TooltipCustom/TooltipCustom'
+import { handleStopPropagation } from '~/utils/StopPropagation'
 
 function ToolBoxCustom({ sx, linkDownload }) {
 
@@ -28,7 +29,7 @@ function ToolBoxCustom({ sx, linkDownload }) {
   }, [])
 
   return (
-    <div ref={dropdownRef} className={`relative z-[998] ${sx}`}>
+    <div onClick={handleStopPropagation} ref={dropdownRef} className={`relative z-[998] ${sx}`}>
 
       <TooltipCustom decription={'More'}>
         <div

@@ -1,6 +1,11 @@
 import { FaPlay } from 'react-icons/fa'
+import { useContext } from 'react'
+import { NCSounds } from '~/utils/Context'
 
 function TopSongs({ dataApis }) {
+  const { handlePlay } = useContext(NCSounds)
+
+
   // Lấy 10 bài hát có số views cao nhất
   const cloneDataApis = [...dataApis]
   const top10Songs = [...cloneDataApis.sort((a, b) => b.views - a.views)].splice(0, 10)
@@ -43,6 +48,7 @@ function TopSongs({ dataApis }) {
                 {index + 1}
               </div>
               <div
+                onClick={() => handlePlay(data?.id)}
                 className="absolute bottom-2 right-2 grid h-8 w-8 translate-y-6 place-items-center rounded-full bg-ncs-active-color pl-[2px] text-sm text-ncs-primary-color
                 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
               >
