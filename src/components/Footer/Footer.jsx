@@ -5,7 +5,7 @@ import { FaGooglePlusSquare } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <div className="mt-8 mb-12 px-2 w-full max-w-screen-2xl mx-auto text-center">
+    <div className="my-12 px-2 w-full max-w-screen-2xl mx-auto text-center">
       <div className="flex items-center justify-center gap-1 mb-2">
         <div className="h-[1px] bg-ncs-secondary-color w-full mr-2"></div>
         <img className="w-10" src={giphy} alt="" />

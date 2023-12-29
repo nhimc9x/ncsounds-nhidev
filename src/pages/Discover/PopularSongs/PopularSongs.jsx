@@ -1,5 +1,6 @@
 import { FaPlay } from 'react-icons/fa'
 import headphoneimg2 from '~/assets/hed.jpg'
+import introNCS from '~/assets/NCSoundsIntro.mp4'
 import ToolBoxCustom from '~/components/ToolBoxCustom/ToolBoxCustom'
 import giphy from '~/assets/giphy.gif'
 
@@ -46,11 +47,12 @@ function PopularSongs({ dataSongs }) {
         </div>
       </div>
       <div className="col-span-5 xl:pt-8 pt-0 max-h-[306px] xl:col-span-2">
-        <img
+        {/* <img
           className="h-full w-full rounded-3xl object-cover object-center"
           src={headphoneimg2}
           alt="Headphone Image"
-        />
+        /> */}
+        <video loop autoPlay muted className="h-full w-full rounded-3xl object-cover object-center" src={introNCS}></video>
       </div>
 
     </div>

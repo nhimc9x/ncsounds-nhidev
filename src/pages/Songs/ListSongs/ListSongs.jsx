@@ -7,7 +7,7 @@ import Rhythm from '~/assets/aniongs.gif'
 import './ListSongs.css'
 
 function ListSongs({ dataApis }) {
-  const { handlePlay, idSong } = useContext(NCSounds)
+  const { handlePlay, idSong, setPlayList } = useContext(NCSounds)
 
   // Các lựa chọn sắp xếp
   const SORTED_BY = {
@@ -51,9 +51,9 @@ function ListSongs({ dataApis }) {
   }
 
   return (
-    <div className="mt-4">
+    <div onClick={() => setPlayList(sortedSongs)} className="mt-4">
 
-      <div className="text-xl font-semibold tracking-wide text-white">
+      <div id='textxx' className="text-xl font-semibold tracking-wide text-white">
         All songs
       </div>
       <div className="2xl:px-10 xl:px-4 mdl:px-0 mt-2">

@@ -1,10 +1,21 @@
+import { useContext } from 'react'
+import { NCSounds } from '~/utils/Context'
 import { FaPlay } from 'react-icons/fa'
 import { GoHeartFill } from 'react-icons/go'
 
-function ActionsBar() {
+function ActionsBar({ dataSongsOfAuthor }) {
+  const { handlePlay, setPlayList } = useContext(NCSounds)
+
+  const handlePlayList = () => {
+    setPlayList(dataSongsOfAuthor)
+    handlePlay(dataSongsOfAuthor[0].id)
+  }
   return (
     <div className="mt-2 flex gap-1">
-      <div className="group relative h-6 w-6 cursor-pointer overflow-hidden rounded-full transition-all duration-[450ms] hover:w-20">
+      <div
+        onClick={handlePlayList}
+        className="group relative h-6 w-6 cursor-pointer overflow-hidden rounded-full transition-all duration-[450ms] hover:w-20"
+      >
         <div className="-translate-x-full rounded-full bg-ncs-primary-color py-[2px] pl-8 pr-3 text-sm text-transparent transition-transform duration-[450ms] group-hover:translate-x-0 group-hover:text-ncs-text-color">
           Play
         </div>
@@ -21,7 +32,7 @@ function ActionsBar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default ActionsBar

@@ -1,16 +1,16 @@
 import { useContext } from 'react'
+import { NCSounds } from '~/utils/Context'
 import { LuMusic } from 'react-icons/lu'
 import ToolBar from '~/components/ToolBar/ToolBar'
-import { NCSounds } from '~/utils/Context'
 import Rhythm from '~/assets/aniongs.gif'
 
-function SongsOfAuthor({ dataSong }) {
+function SongsOfAuthor({ dataSongsOfAuthor }) {
   const { handlePlay, idSong } = useContext(NCSounds)
 
   return (
-    <div className=" bg-ncs-secondary-color border-t-2 border-ncs-primary-color p-4">
+    <div className=" bg-ncs-secondary-color border-t-2 border-ncs-primary-color p-4 animate-show-in origin-top">
 
-      {dataSong.map((data, index) => (
+      {dataSongsOfAuthor.map((data, index) => (
         <div
           key={index}
           className="flex justify-between items-center bg-ncs-primary-color px-3 mb-[6px] last:mb-0 hover:bg-gray-700 cursor-pointer"
