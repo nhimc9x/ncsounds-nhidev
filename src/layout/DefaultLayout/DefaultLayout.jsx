@@ -7,43 +7,40 @@ import mockData from '~/apis/mock_data.json'
 
 function DefaultLayout({ children }) {
 
-  // lấy bài hát từ database
+  // lấy dữ liệu bài hát từ database
   const [song, setSong] = useState(null)
   const handleSetSongs = (idSong) => {
     const song = mockData.find(song => idSong === song.id)
     !song ? setSong(null) : setSong(song)
   }
 
-  // phát bài hát
-  const [idSong, setIdSong] = useState(0)
-  const handlePlay = (idSong) => {
-    setIdSong(idSong)
-    handleSetSongs(idSong)
+  // Set id bài hát đang phát
+  const [idSong, setIdSong] = useState(null)
+  const handlePlay = (id) => {
+    setIdSong(id)
+    handleSetSongs(id)
   }
 
   // Trạng thái
   const [play, setPlay] = useState(false)
-  const isPlay = () => {
-    setPlay(true)
-  }
-  const isPause = () => {
-    setPlay(false)
-  }
+
+  // Danh sách phát
+  const [playList, setPlayList] = useState([...mockData])
 
   return (
-    <div className="h-screen overflow-y-auto">
+    <NCSounds.Provider value={{ mockData, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList }}>
+      <div className="h-screen overflow-y-auto">
 
-      <SideBar />
+        <SideBar />
 
-      <div className="h-full overflow-y-auto bg-ncs-primary-color py-4 mdl:px-8 px-4">
-        <NCSounds.Provider value={{ mockData, handlePlay, idSong, song, play, isPlay, isPause }}>
+        <div id='ncs_content' className="h-full overflow-y-auto bg-ncs-primary-color py-4 mdl:px-8 px-4">
           <div className=""> {children} </div>
-        </NCSounds.Provider>
-      </div>
+        </div>
 
-      <AudioPlayerCustom song={song} play={play} isPlay={isPlay} isPause={isPause} />
-    </div>
+        <AudioPlayerCustom />
+      </div>
+    </NCSounds.Provider>
+
   )
 }
-
 export default DefaultLayout

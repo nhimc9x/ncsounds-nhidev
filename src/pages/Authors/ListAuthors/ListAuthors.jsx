@@ -50,7 +50,7 @@ function ListAuthors({ dataApis }) {
                 </div>
                 <div className="text-sm text-ncs-text-color">{`${getSongsOfAuthor(data.author).length} Songs - ${totalViews(data.author)} Views`}</div>
               </div>
-              <ActionsBar />
+              <ActionsBar dataSongsOfAuthor={getSongsOfAuthor(data.author)} />
             </div>
 
             <div className="text-xl ml-auto pr-4 text-ncs-text-color self-center">
@@ -59,7 +59,7 @@ function ListAuthors({ dataApis }) {
 
           </div>
 
-          {isShow(data.author) && <SongsOfAuthor dataSong={getSongsOfAuthor(data.author)}/>}
+          {isShow(data.author) && <SongsOfAuthor dataSongsOfAuthor={getSongsOfAuthor(data.author)}/>}
 
         </div>
       ))}

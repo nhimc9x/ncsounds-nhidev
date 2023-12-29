@@ -1,16 +1,40 @@
 import AudioPlayer from 'react-h5-audio-player'
+import { MdOutlineDragHandle } from 'react-icons/md'
+import { useEffect, useState, useContext } from 'react'
+import { NCSounds } from '~/utils/Context'
 import 'react-h5-audio-player/lib/styles.css'
 import './AudioPlayerCustom.css'
-import { useEffect, useState } from 'react'
-import { MdOutlineDragHandle } from 'react-icons/md'
-import IMMM from '~/assets/nhip.gif'
 
-function AudioPlayerCustom({ song, play, isPlay, isPause }) {
+function AudioPlayerCustom() {
+  const { song, handlePlay, idSong, play, setPlay, playList } = useContext(NCSounds)
 
+  // Ẩn hiện thanh player
   const [showPlayer, setShowPlayer] = useState(true)
   useEffect(() => { !song || setShowPlayer(false) }, [song])
   const handleClick = () => {
     setShowPlayer(!showPlayer)
+  }
+
+  // Phát/Dừng nhạc
+  const isPlay = () => {
+    setPlay(true)
+  }
+  const isPause = () => {
+    setPlay(false)
+  }
+
+  const currentSongIndex = playList.findIndex(song => song.id === idSong)
+
+  // Next bài hát
+  const handleNextSong = () => {
+    const nextSongIndex = (currentSongIndex + 1) % playList.length
+    handlePlay(playList[nextSongIndex].id)
+  }
+
+  // Previous bài hát
+  const handlePreviousSong = () => {
+    const nextSongIndex = (currentSongIndex - 1) % playList.length
+    handlePlay(playList[nextSongIndex].id)
   }
 
   return (
@@ -29,6 +53,9 @@ function AudioPlayerCustom({ song, play, isPlay, isPause }) {
         customVolumeControls={[]}
         onPlay={isPlay}
         onPause={isPause}
+        onClickNext={handleNextSong}
+        onClickPrevious={handlePreviousSong}
+        onEnded={handleNextSong}
         customAdditionalControls={[
           <div key={1} className="flex items-center gap-2 w-full">
             <div className="">
