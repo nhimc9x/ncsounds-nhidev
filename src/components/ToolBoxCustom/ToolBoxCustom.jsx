@@ -10,17 +10,18 @@ function ToolBoxCustom({ sx, linkDownload }) {
 
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef(null)
+  let setTimeoutID
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
 
+  // Đóng menu khi click ra ngoài
   const handleDocumentClick = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false)
     }
   }
-
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick)
     return () => {
@@ -28,8 +29,31 @@ function ToolBoxCustom({ sx, linkDownload }) {
     }
   }, [])
 
+  // // Tự động đóng menu khi, kéo chuột ra ngoài (Fix bug mở nhiều menu cùng lúc)
+  const autoHideDropDown = () => {
+    setTimeoutID = setTimeout(() => {
+      setIsOpen(false)
+    }, 2500)
+  }
+
+  const clearAutoHide = () => {
+    clearTimeout(setTimeoutID)
+  }
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(setTimeoutID)
+    }
+  }, [isOpen])
+
   return (
-    <div onClick={handleStopPropagation} ref={dropdownRef} className={`relative z-[998] ${sx}`}>
+    <div
+      onClick={(e) => handleStopPropagation(e)}
+      onMouseLeave={autoHideDropDown}
+      onMouseEnter={clearAutoHide}
+      ref={dropdownRef}
+      className={`relative z-[998] ${sx}`}
+    >
 
       <TooltipCustom decription={'More'}>
         <div

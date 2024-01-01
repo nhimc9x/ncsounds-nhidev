@@ -5,7 +5,7 @@ import ToolBoxCustom from '~/components/ToolBoxCustom/ToolBoxCustom'
 import giphy from '~/assets/giphy.gif'
 
 import { useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 
 function PopularSongs({ dataSongs }) {
   const { handlePlay, idSong } = useContext(NCSounds)

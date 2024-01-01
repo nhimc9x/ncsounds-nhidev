@@ -4,18 +4,18 @@ import About from './About/About'
 import TopSongs from './TopSongs/TopSongs'
 
 import { useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 
 function Songs() {
-  const { mockData } = useContext(NCSounds)
+  const { dataSongs } = useContext(NCSounds)
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl">
-      <About dataApis={mockData} />
+      <About dataSongs={dataSongs} />
 
-      <TopSongs dataApis={mockData} />
+      <TopSongs dataSongs={dataSongs} />
 
-      <ListSongs dataApis={mockData} />
+      <ListSongs dataSongs={dataSongs} />
 
       <Footer />
     </div>

@@ -1,14 +1,14 @@
 import { FaPlay } from 'react-icons/fa'
 import { useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 
-function TopSongs({ dataApis }) {
+function TopSongs({ dataSongs }) {
   const { handlePlay } = useContext(NCSounds)
 
 
   // Lấy 10 bài hát có số views cao nhất
-  const cloneDataApis = [...dataApis]
-  const top10Songs = [...cloneDataApis.sort((a, b) => b.views - a.views)].splice(0, 10)
+  const clonedataSongs = [...dataSongs]
+  const top10Songs = [...clonedataSongs.sort((a, b) => b.views - a.views)].splice(0, 10)
   let numberColor = {
     no1color: '#4a90e2',
     no2color: '#50e3c2',
