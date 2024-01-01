@@ -1,9 +1,9 @@
 import ncsoundImg from '~/assets/ncsound.png'
 import logoNCS from '~/assets/logoNCS.png'
 
-function About({ dataApis }) {
-  let quantitySongs = dataApis.length
-  let quantityAuthor = [...new Set(dataApis.map(data => data.author))].length
+function About({ dataSongs }) {
+  let quantitySongs = dataSongs.length
+  let quantityAuthor = [...new Set(dataSongs.map(data => data.author))].length
 
   return (
     <div className="bg-black/20 flex sm:flex-row flex-col">

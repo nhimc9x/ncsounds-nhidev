@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 import { LuMusic } from 'react-icons/lu'
 import ToolBar from '~/components/ToolBar/ToolBar'
 import Rhythm from '~/assets/aniongs.gif'

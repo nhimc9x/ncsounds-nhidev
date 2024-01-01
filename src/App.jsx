@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { PUBLIC_ROUTES } from './routes/routes'
 import DefaultLayout from './layout/DefaultLayout/Defaultlayout'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import NCSContext from './context/NCSContext/NCSContext'
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="App">
+      <NCSContext>
         <Routes>
           {PUBLIC_ROUTES.map((route, index) => {
             const Page = route.component
@@ -33,7 +34,7 @@ function App() {
             )
           })}
         </Routes>
-      </div>
+      </NCSContext>
     </Router>
   )
 }

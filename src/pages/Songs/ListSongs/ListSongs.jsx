@@ -2,11 +2,11 @@ import { LuMusic } from 'react-icons/lu'
 import { FaPlay } from 'react-icons/fa'
 import { useEffect, useState, useContext } from 'react'
 import ToolBar from '~/components/ToolBar/ToolBar'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 import Rhythm from '~/assets/aniongs.gif'
 import './ListSongs.css'
 
-function ListSongs({ dataApis }) {
+function ListSongs({ dataSongs }) {
   const { handlePlay, idSong, setPlayList } = useContext(NCSounds)
 
   // Các lựa chọn sắp xếp
@@ -16,12 +16,12 @@ function ListSongs({ dataApis }) {
     LATEST: 'latest'
   }
 
-  const [sortedSongs, setSortedSongs] = useState([...dataApis])
+  const [sortedSongs, setSortedSongs] = useState([...dataSongs])
   const [sortType, setSortType] = useState(null)
 
   // Sắp xếp danh sách
   useEffect(() => {
-    const sorted = [...dataApis]
+    const sorted = [...dataSongs]
     switch (sortType) {
     case SORTED_BY.NAME: {
       sorted.sort((a, b) => {

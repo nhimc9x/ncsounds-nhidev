@@ -3,7 +3,8 @@ const routes = {
   songs: '/songs',
   authors: '/authors',
   favourite: '/favourite',
-  album: '/album'
+  album: '/album',
+  search: '/search'
 }
 
 export default routes

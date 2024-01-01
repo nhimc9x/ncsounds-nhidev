@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 import { FaPlay } from 'react-icons/fa'
 import { GoHeartFill } from 'react-icons/go'
 

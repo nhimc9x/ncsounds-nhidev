@@ -5,15 +5,15 @@ import { useState } from 'react'
 import SongsOfAuthor from './SongsOfAuthor/SongsOfAuthor'
 import ActionsBar from './SongsOfAuthor/ActionsBar/ActionsBar'
 
-function ListAuthors({ dataApis }) {
-  let uniqueAuthors = [...new Set(dataApis.map(data => data?.author))]
+function ListAuthors({ dataSongs }) {
+  let uniqueAuthors = [...new Set(dataSongs.map(data => data?.author))]
   let dataAuthor = uniqueAuthors.map(author => {
-    const dataForAuthor = dataApis.find(data => data.author === author)
+    const dataForAuthor = dataSongs.find(data => data.author === author)
     return { author: author, imageUrl: dataForAuthor?.links?.images[0]?.url}
   })
 
   // Hàm lấy dữ liệu từ data theo tên tác giả
-  const getSongsOfAuthor = (authorName) => dataApis.filter(data => data.author === authorName).map(data => data)
+  const getSongsOfAuthor = (authorName) => dataSongs.filter(data => data.author === authorName).map(data => data)
   const totalViews = (authorName) => {
     return getSongsOfAuthor(authorName).reduce((totalViews, data) => totalViews + data.views, 0)
   }

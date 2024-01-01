@@ -1,0 +1,24 @@
+[
+  {
+    "_id" : 1,
+    "username" : "vuvannhi7703",
+    "password" : "bsaBUWsbhwgdv2884",
+    "avatar" : "http://hgggdgbcb.png",
+    "favourite" : {
+      "songs" : ["Sing me to sleep", "Fade", "Sleep"],
+      "author" : ["Alan Walker", "Sơn Tùng"]
+    },
+    "playlist" : [
+      {
+        "id" : "1",
+        "title" : "EDM Chill",
+        "songs" : ["Sing me to sleep", "Unity"]
+      },
+      {
+        "id" : "2",
+        "title" : "Nhạc cỏ",
+        "songs" : []
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 import AudioPlayer from 'react-h5-audio-player'
 import { MdOutlineDragHandle } from 'react-icons/md'
 import { useEffect, useState, useContext } from 'react'
-import { NCSounds } from '~/utils/Context'
+import { NCSounds } from '~/hocks/useContext'
 import 'react-h5-audio-player/lib/styles.css'
 import './AudioPlayerCustom.css'
 
