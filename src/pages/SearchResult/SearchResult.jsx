@@ -4,7 +4,6 @@ import Footer from '~/components/Footer/Footer'
 import GridSongsList from '~/components/GridSongsList/GridSongsList'
 import SearchBar from '~/components/Header/SearchBar/SearchBar'
 import { NCSounds } from '~/hocks/useContext'
-import NoResultImg from '~/assets/no_result.png'
 import { LuSearchX } from 'react-icons/lu'
 
 function SearchResult() {
@@ -20,8 +19,6 @@ function SearchResult() {
   const resultAuthors = dataSongs.filter(data =>
     data.author.toLowerCase().includes(searchTerm.toLowerCase())
   )
-  console.log('Kết quả tác giả: ', resultAuthors)
-  console.log('Kết quả bái hát: ', resultSongs)
 
   return (
     <div>
@@ -45,7 +42,7 @@ function SearchResult() {
         )}
 
         {!resultSongs.length && !resultAuthors.length && (
-          <div className="flex flex-col items-center justify-center font-light text-center px-10 h-[60vh]">
+          <div className="flex flex-col items-center justify-center font-light text-center sms:px-10 px-4 h-[60vh]">
             <div className="text-4xl text-white"><LuSearchX /></div>
             <div className="text-white mt-1 mb-4">No results found</div>
             <div className="text-ncs-text-color text-sm">Please make sure you have spelled it correctly, use fewer keywords, or try different keywords</div>

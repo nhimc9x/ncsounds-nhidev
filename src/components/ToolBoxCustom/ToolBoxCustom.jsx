@@ -33,7 +33,7 @@ function ToolBoxCustom({ sx, linkDownload }) {
   const autoHideDropDown = () => {
     setTimeoutID = setTimeout(() => {
       setIsOpen(false)
-    }, 2500)
+    }, 1800)
   }
 
   const clearAutoHide = () => {

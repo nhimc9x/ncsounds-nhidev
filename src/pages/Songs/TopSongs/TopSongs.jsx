@@ -60,7 +60,7 @@ function TopSongs({ dataSongs }) {
               <div className="text-limit text-sm text-white group-hover:text-ncs-active-color">
                 {data?.name}
               </div>
-              <div className="text-xs text-ncs-text-color group-hover:text-white">
+              <div className="text-limit text-xs text-ncs-text-color group-hover:text-white">
                 {data?.author}
               </div>
             </div>

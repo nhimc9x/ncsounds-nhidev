@@ -18,7 +18,7 @@ function SearchBar({ searched }) {
   }
 
   return (
-    <div className="flex items-center bg-transparent w-[300px] group rounded-full border border-ncs-text-color overflow-hidden">
+    <div className="flex items-center bg-transparent w-[240px] xs:w-[300px] group rounded-full border border-ncs-text-color overflow-hidden">
       <input
         className='w-full text-sm text-ncs-active-color placeholder:font-light px-4 bg-transparent outline-none'
         type="text"

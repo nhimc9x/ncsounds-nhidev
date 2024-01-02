@@ -8,7 +8,7 @@ import MenuItem from './MenuItem/MenuItem'
 
 function SideBar() {
   return (
-    <div className="float-left h-full mdl:w-[300px] w-[80px] transition-all duration-300 bg-ncs-secondary-color mdl:px-8 px-1 py-2">
+    <div className="float-left h-full mdl:w-[300px] w-[80px] transition-all duration-300 bg-ncs-secondary-color mdl:px-8 px-1 py-2 overflow-y-auto pb-8">
       <div className="text-3xl font-semibold uppercase tracking-wider text-ncs-active-color text-center">
         <div id='ncs-name' className="mdl:block hidden">NCSounds</div>
         <div id='ncs-name--rps' className="mdl:hidden block">NCS</div>
