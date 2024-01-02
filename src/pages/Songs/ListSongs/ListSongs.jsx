@@ -23,24 +23,24 @@ function ListSongs({ dataSongs }) {
   useEffect(() => {
     const sorted = [...dataSongs]
     switch (sortType) {
-    case SORTED_BY.NAME: {
-      sorted.sort((a, b) => {
-        if (a['name'] < b['name']) return -1
-        if (a['name'] > b['name']) return 1
-        return 0
-      })
-    } break
+      case SORTED_BY.NAME: {
+        sorted.sort((a, b) => {
+          if (a['name'] < b['name']) return -1
+          if (a['name'] > b['name']) return 1
+          return 0
+        })
+      } break
 
-    case SORTED_BY.VIEWS: {
-      sorted.sort((a, b) => {
-        if (b['views'] < a['views']) return -1
-        if (b['views'] > a['views']) return 1
-        return 0
-      })
-    } break
+      case SORTED_BY.VIEWS: {
+        sorted.sort((a, b) => {
+          if (b['views'] < a['views']) return -1
+          if (b['views'] > a['views']) return 1
+          return 0
+        })
+      } break
 
-    case SORTED_BY.LATEST: sorted.reverse()
-      break
+      case SORTED_BY.LATEST: sorted.reverse()
+        break
     }
     setSortedSongs(sorted)
   }, [sortType])
@@ -68,9 +68,9 @@ function ListSongs({ dataSongs }) {
           <div
             onClick={() => handlePlay(data?.id)}
             key={index}
-            className={`songs-item ${idSong === data?.id && 'is-playing'}`}
+            className={`songs-item ${idSong === data?.id ? 'is-playing' : ''}`}
           >
-            <div className="text-ncs-text-color flex items-center gap-3">
+            <div className="text-ncs-text-color flex items-center gap-3 w-full">
               <div className="">
                 <LuMusic />
               </div>
@@ -80,14 +80,14 @@ function ListSongs({ dataSongs }) {
                   {idSong === data?.id ? <img src={Rhythm} alt="Rhythm" /> : <FaPlay />}
                 </div>
               </div>
+              <div className="text-limit flex-1">
+                <div className="text-sm text-white text-limit">{data?.name}</div>
+                <div className="text-xs text-limit">{data?.author}</div>
+              </div>
               <div className="">
-                <div className="text-sm text-white">{data?.name}</div>
-                <div className="text-xs">{data?.author}</div>
+                <ToolBar linkDownload={data?.url} />
               </div>
             </div>
-
-            <ToolBar linkDownload={data?.url} />
-
           </div>
         ))}
       </div>

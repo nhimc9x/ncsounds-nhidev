@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { NCSounds } from '~/hocks/useContext'
 import ToolBoxCustom from '../ToolBoxCustom/ToolBoxCustom'
 
@@ -6,7 +6,7 @@ function GridSongsList({ dataSongs }) {
   const { handlePlay } = useContext(NCSounds)
 
   return (
-    <div className="my-3 grid 2xl:grid-cols-6 xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 grid-cols-2 gap-3 px-0 2xl:gap-4 2xl:px-8">
+    <div className="my-3 grid 2xl:grid-cols-6 xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 sxs:grid-cols-2 grid-cols-1 gap-3 sxs:px-0 px-6 2xl:gap-4 2xl:px-8">
       {dataSongs?.map((data, index) => (
         <div
           onClick={() => handlePlay(data.id)}

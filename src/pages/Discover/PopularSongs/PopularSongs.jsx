@@ -37,7 +37,7 @@ function PopularSongs({ dataSongs }) {
                   <img src={giphy} alt="" />
                 </div>
               </div>
-              <div className="ml-2 text-sm text-white">{data.name}</div>
+              <div className="ml-2 text-sm text-white text-limit flex-1">{data.name}</div>
               <div className="ml-auto mr-3 hidden text-ncs-text-color text-sm sm:block">
                 {data.author}
               </div>
