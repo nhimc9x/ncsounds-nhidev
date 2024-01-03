@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NCSounds } from '~/hocks/useContext'
 import dataSongs from '~/apis/mock_data.json'
+import dataUser from '~/apis/user.json'
 
 function NCSContext({ children }) {
 
@@ -35,10 +36,15 @@ function NCSContext({ children }) {
   // Trạng thái
   const [play, setPlay] = useState(false)
 
-  // Danh sách phát
+  // Danh đang phát sách phát
   const [playList, setPlayList] = useState([...dataSongs])
+
+  // Lấy dữ liệu playlist của user (VD: user có id là 1)
+  const USER_ID = 1
+  const dataPlaylist = dataUser.filter((data) => data._id === USER_ID)[0]?.playlist
+
   return (
-    <NCSounds.Provider value={{ dataSongs, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList }}>
+    <NCSounds.Provider value={{ dataSongs, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList, dataPlaylist }}>
       {children}
     </NCSounds.Provider>
   )

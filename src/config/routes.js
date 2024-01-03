@@ -3,7 +3,8 @@ const routes = {
   songs: '/songs',
   authors: '/authors',
   favourite: '/favourite',
-  album: '/album',
+  playlist: '/playlist',
+  playlist_details: '/playlist/:playlistID',
   search: '/search'
 }
 

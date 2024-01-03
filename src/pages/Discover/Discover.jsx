@@ -6,13 +6,14 @@ import Footer from '~/components/Footer/Footer'
 import HeroBanner from './HeroBanner/HeroBanner'
 import { useContext } from 'react'
 import { NCSounds } from '~/hocks/useContext'
-
+import TitleManager from '~/components/TitleManager/TitleManager'
 
 function Discover() {
   const { dataSongs } = useContext(NCSounds)
 
   return (
     <div>
+      <TitleManager title="NCSounds" />
       <Header />
       <div className="mx-auto w-full max-w-screen-2xl">
         <HeroBanner />

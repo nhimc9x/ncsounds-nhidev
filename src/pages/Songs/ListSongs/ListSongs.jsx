@@ -23,24 +23,24 @@ function ListSongs({ dataSongs }) {
   useEffect(() => {
     const sorted = [...dataSongs]
     switch (sortType) {
-      case SORTED_BY.NAME: {
-        sorted.sort((a, b) => {
-          if (a['name'] < b['name']) return -1
-          if (a['name'] > b['name']) return 1
-          return 0
-        })
-      } break
+    case SORTED_BY.NAME: {
+      sorted.sort((a, b) => {
+        if (a['name'] < b['name']) return -1
+        if (a['name'] > b['name']) return 1
+        return 0
+      })
+    } break
 
-      case SORTED_BY.VIEWS: {
-        sorted.sort((a, b) => {
-          if (b['views'] < a['views']) return -1
-          if (b['views'] > a['views']) return 1
-          return 0
-        })
-      } break
+    case SORTED_BY.VIEWS: {
+      sorted.sort((a, b) => {
+        if (b['views'] < a['views']) return -1
+        if (b['views'] > a['views']) return 1
+        return 0
+      })
+    } break
 
-      case SORTED_BY.LATEST: sorted.reverse()
-        break
+    case SORTED_BY.LATEST: sorted.reverse()
+      break
     }
     setSortedSongs(sorted)
   }, [sortType])
