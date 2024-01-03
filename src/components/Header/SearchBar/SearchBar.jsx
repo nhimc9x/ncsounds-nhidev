@@ -9,7 +9,6 @@ function SearchBar({ searched }) {
 
   const handleSearch = () => {
     if (searchTerm.trim() === '' || searchTerm === searched) return 0
-    console.log(searchTerm)
     navigate(`/search?q=${searchTerm}`)
   }
 

@@ -10,14 +10,51 @@
     },
     "playlist" : [
       {
-        "id" : "1",
+        "id" : "De22ccahegwef",
         "title" : "EDM Chill",
-        "songs" : ["Sing me to sleep", "Unity"]
+        "slug" : "edm-chill",
+        "image" : "https://i1.sndcdn.com/artworks-se643hfNHcAkdWp2-SMVgUw-t500x500.jpg",
+        "songs" : [1, 5, 7, 10, 15, 19, 21, 22, 30, 53]
       },
       {
-        "id" : "2",
-        "title" : "Nhạc cỏ",
-        "songs" : []
+        "id" : "EvhIkhm4w3st",
+        "title" : "NCS GAMING",
+        "slug" : "ncs-gaming",
+        "image" : "https://i.scdn.co/image/ab67706c0000da84f34faac7339f34cc02add825",
+        "songs" : [1, 11, 18, 23, 30, 55]
+      },
+      {
+        "id" : "749uveratys3o",
+        "title" : "Bass 8D",
+        "slug" : "bass-8d",
+        "image" : "https://i1.sndcdn.com/artworks-DXrZ18rbgBvdZGhM-6SaGEQ-t240x240.jpg",
+        "songs" : [1, 11, 12, 45, 59]
+      }
+    ]
+  },
+  {
+    "_id" : 2,
+    "username" : "nhimc9x",
+    "password" : "bsaBUWsbhwgdv2884",
+    "avatar" : "http://hgggdgbcb.png",
+    "favourite" : {
+      "songs" : ["Sing me to sleep", "Fade", "Sleep"],
+      "author" : ["Alan Walker", "Sơn Tùng"]
+    },
+    "playlist" : [
+      {
+        "id" : 1,
+        "title" : "Chill",
+        "slug" : "chill",
+        "image" : "https://i1.sndcdn.com/artworks-se643hfNHcAkdWp2-SMVgUw-t500x500.jpg",
+        "songs" : [1, 5, 7, 10, 15, 19, 21, 22, 30, 53]
+      },
+      {
+        "id" : 2,
+        "title" : "AU POP",
+        "slug" : "au-pop",
+        "image" : "https://i.scdn.co/image/ab67706c0000da84f34faac7339f34cc02add825",
+        "songs" : [1, 11, 18, 23, 30, 55]
       }
     ]
   }

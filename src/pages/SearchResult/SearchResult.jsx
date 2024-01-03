@@ -5,6 +5,7 @@ import GridSongsList from '~/components/GridSongsList/GridSongsList'
 import SearchBar from '~/components/Header/SearchBar/SearchBar'
 import { NCSounds } from '~/hocks/useContext'
 import { LuSearchX } from 'react-icons/lu'
+import TitleManager from '~/components/TitleManager/TitleManager'
 
 function SearchResult() {
   const { dataSongs } = useContext(NCSounds)
@@ -22,6 +23,7 @@ function SearchResult() {
 
   return (
     <div>
+      <TitleManager title="NCSounds - Search" />
       <SearchBar searched={searchTerm} />
       <div className="mt-6 mb-3 text-sm text-ncs-text-color">
         The search results for &apos;<span className="text-ncs-active-color">{searchTerm}</span>&apos; :

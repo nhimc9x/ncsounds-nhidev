@@ -2,7 +2,7 @@ import { TbMusicSearch } from 'react-icons/tb'
 import { LiaHeadphonesSolid } from 'react-icons/lia'
 import { ImUser } from 'react-icons/im'
 import { GoHeartFill } from 'react-icons/go'
-import { IoAlbums } from 'react-icons/io5'
+import { PiPlaylistBold } from 'react-icons/pi'
 import routes from '~/config/routes'
 import MenuItem from './MenuItem/MenuItem'
 
@@ -20,10 +20,10 @@ function SideBar() {
         <MenuItem to={routes.songs} icon={<LiaHeadphonesSolid />} title={'Songs'} />
         <MenuItem to={routes.authors} icon={<ImUser />} title={'Authors'} />
 
-        <div className="font-medium text-xl text-ncs-text-color mdl:mt-10 mt-8">Playlist</div>
+        <div className="font-medium text-xl text-ncs-text-color mdl:mt-10 mt-8">Library</div>
 
         <MenuItem to={routes.favourite} icon={<GoHeartFill />} title={'Favourite'} />
-        <MenuItem to={routes.album} icon={<IoAlbums />} title={'Album'} />
+        <MenuItem to={routes.playlist} icon={<PiPlaylistBold />} title={'Playlist'} />
 
       </div>
     </div>
