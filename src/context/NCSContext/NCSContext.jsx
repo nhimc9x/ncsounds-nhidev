@@ -43,6 +43,13 @@ function NCSContext({ children }) {
   const USER_ID = 1
   const dataPlaylist = dataUser.filter((data) => data._id === USER_ID)[0]?.playlist
 
+  // Set màu theme playlist
+  // const THEME_COLOR = {
+  //   blue: '',
+  //   pink: '',
+  //   green: ''
+  // }
+
   return (
     <NCSounds.Provider value={{ dataSongs, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList, dataPlaylist }}>
       {children}

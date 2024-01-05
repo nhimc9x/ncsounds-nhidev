@@ -3,24 +3,50 @@ import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
 import { NCSounds } from '~/hocks/useContext'
 import TitleManager from '~/components/TitleManager/TitleManager'
+import { FaPlay } from 'react-icons/fa'
+import { MdDelete } from 'react-icons/md'
+import TooltipCustom from '~/components/TooltipCustom/TooltipCustom'
+import Footer from '~/components/Footer/Footer'
+import { handleStopPropagation } from '~/utils/StopPropagation'
+import ListSongs from './ListSongs/ListSongs'
 
 function PlayListDetails() {
-  const { dataPlaylist } = useContext(NCSounds)
+
+  const { dataSongs, dataPlaylist, handlePlay, setPlayList } = useContext(NCSounds)
 
   const { playlistID } = useParams()
 
   const [myPlaylist, setMyPlaylist] = useState()
 
+  const [songsInMyPlaylist, setSongsInMyPlaylist] = useState()
+
   useEffect(() => {
     const dataMyPlaylist = dataPlaylist.find((playlist => playlist.id === playlistID))
     setMyPlaylist(dataMyPlaylist || {})
-  }, [playlistID])
+  }, [dataPlaylist, playlistID])
+
+  useEffect(() => {
+    const songsData = dataSongs.filter(data => myPlaylist?.songs?.includes(data.id))
+    setSongsInMyPlaylist(songsData)
+  }, [dataSongs, myPlaylist])
+
+  const handlePlayMyList = () => {
+    setPlayList(songsInMyPlaylist)
+    handlePlay(songsInMyPlaylist[0]?.id)
+  }
+
+  const handleDelSongFromPlaylist = (event, delSongID) => {
+    handleStopPropagation(event)
+    const deletedSongs = myPlaylist?.songs?.filter(songsID => songsID !== delSongID)
+    const updateMyPlaylist = { ...myPlaylist, songs: deletedSongs }
+    setMyPlaylist(updateMyPlaylist)
+  }
 
   return (
     <>
       <TitleManager title={`NCSounds - ${myPlaylist?.title}`} />
       <div className="mx-auto w-full max-w-screen-2xl">
-        <div className="bg-cyan-500/70 sms:h-64 h-44 rounded-md sms:pt-3 pt-2">
+        <div style={{ backgroundColor: myPlaylist?.theme }} className="bg-cyan-500 sms:h-64 h-44 rounded-md sms:pt-3 pt-2">
           <div className="h-24 sms:h-40 sms:mx-3 mx-2 flex">
             <div className="sms:w-40 w-24 h-full">
               <img className="h-full w-full object-cover object-center rounded-sm" src={myPlaylist?.image} alt="" />
@@ -31,9 +57,38 @@ function PlayListDetails() {
               <div className="mt-auto text-white">32 Songs</div>
             </div>
           </div>
-          <div className="w-full bg-gray-900/70 backdrop-blur-md h-full sms:mt-3 mt-2"></div>
+        </div>
+        <div className="w-full sms:-translate-y-20 sms:-mb-20 -mb-16 -translate-y-16 bg-gray-900/70 backdrop-blur-md sms:mt-3 mt-2 rounded-br-md rounded-bl-md">
+          <div className="flex justify-between items-center p-4">
+            <div
+              onClick={handlePlayMyList}
+              className="w-10 h-10 bg-green-600 grid place-content-center rounded-full text-sm hover:scale-105 cursor-pointer"
+            >
+              <FaPlay />
+            </div>
+            <TooltipCustom decription="Delete playlist">
+              <div className="text-xl w-6 h-6 grid place-content-center text-white hover:text-red-500 cursor-pointer duration-300">
+                <MdDelete />
+              </div>
+            </TooltipCustom>
+          </div>
+
+          {
+            myPlaylist?.songs.length === 0 ?
+              (<div className="text-center font-thin pt-2 pb-6 px-2">
+                <div className="text-white">
+                  No songs in the playlist
+                </div>
+                <div className="text-sm text-ncs-text-color">
+                  Add some songs to enjoy the music!
+                </div>
+              </div>) :
+              (<ListSongs songsInMyPlaylist={songsInMyPlaylist} handleDelSongFromPlaylist={handleDelSongFromPlaylist} />)
+          }
+
         </div>
       </div>
+      <Footer />
     </>
   )
 }
