@@ -8,7 +8,7 @@ function PlaylistItem() {
   const { dataPlaylist } = useContext(NCSounds)
 
   return (
-    <div className="my-3 grid 2xl:grid-cols-6 xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 sxs:grid-cols-2 grid-cols-1 gap-3 sxs:px-0 px-6 2xl:gap-4 2xl:px-8">
+    <div className="min-h-[60vh] my-3 grid 2xl:grid-cols-6 xl:grid-cols-5 md:grid-cols-4 sms:grid-cols-3 sxs:grid-cols-2 grid-cols-1 gap-3 sxs:px-0 px-6 2xl:gap-4 2xl:px-8 ">
 
       {dataPlaylist.map((data, index) => (
         <div key={index} className="h-44 bg-ncs-secondary-color relative rounded-md overflow-hidden group hover:rounded-none duration-300">

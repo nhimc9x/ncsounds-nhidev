@@ -13,6 +13,7 @@
         "id" : "De22ccahegwef",
         "title" : "EDM Chill",
         "slug" : "edm-chill",
+        "theme" : "#06b6d4",
         "image" : "https://i1.sndcdn.com/artworks-se643hfNHcAkdWp2-SMVgUw-t500x500.jpg",
         "songs" : [1, 5, 7, 10, 15, 19, 21, 22, 30, 53]
       },
@@ -20,6 +21,7 @@
         "id" : "EvhIkhm4w3st",
         "title" : "NCS GAMING",
         "slug" : "ncs-gaming",
+        "theme" : "#10b981",
         "image" : "https://i.scdn.co/image/ab67706c0000da84f34faac7339f34cc02add825",
         "songs" : [1, 11, 18, 23, 30, 55]
       },
@@ -27,6 +29,7 @@
         "id" : "749uveratys3o",
         "title" : "Bass 8D",
         "slug" : "bass-8d",
+        "theme" : "#ec4899",
         "image" : "https://i1.sndcdn.com/artworks-DXrZ18rbgBvdZGhM-6SaGEQ-t240x240.jpg",
         "songs" : [1, 11, 12, 45, 59]
       }
