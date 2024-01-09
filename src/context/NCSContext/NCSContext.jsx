@@ -41,7 +41,8 @@ function NCSContext({ children }) {
 
   // Lấy dữ liệu playlist của user (VD: user có id là 1)
   const USER_ID = 1
-  const dataPlaylist = dataUser.filter((data) => data._id === USER_ID)[0]?.playlist
+  const DTPLaylist = dataUser.filter((data) => data._id === USER_ID)[0]?.playlist
+  const [dataPlaylist, setDataPlaylist] = useState(DTPLaylist)
 
   // Set màu theme playlist
   // const THEME_COLOR = {
@@ -51,7 +52,7 @@ function NCSContext({ children }) {
   // }
 
   return (
-    <NCSounds.Provider value={{ dataSongs, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList, dataPlaylist }}>
+    <NCSounds.Provider value={{ dataSongs, song, handlePlay, idSong, setIdSong, play, setPlay, playList, setPlayList, dataPlaylist, setDataPlaylist }}>
       {children}
     </NCSounds.Provider>
   )
