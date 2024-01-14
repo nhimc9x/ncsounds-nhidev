@@ -85,7 +85,7 @@ function ListSongs({ dataSongs }) {
                 <div className="text-xs text-limit">{data?.author}</div>
               </div>
               <div className="">
-                <ToolBar linkDownload={data?.url} />
+                <ToolBar linkDownload={data?.url} IDSong={data?.id} />
               </div>
             </div>
           </div>

@@ -22,7 +22,8 @@ export default {
         'show-up': 'showUp .4s ease-in-out',
         'show-down': 'showDown .4s ease-in-out',
         'show-in': 'showIn .2s ease-in-out',
-        'playing': 'playing 8s linear infinite'
+        'playing': 'playing 8s linear infinite',
+        'alert': 'alert 1s ease-in-out'
       },
       keyframes: {
         'showUp': {
@@ -39,7 +40,11 @@ export default {
         },
         'playing': {
           'to': { transform: 'rotate(360deg)' }
-        }
+        },
+        'alert': {
+          'from': { opacity: 0 },
+          'to': { opacity: 1 }
+        },
       }
     }
   },

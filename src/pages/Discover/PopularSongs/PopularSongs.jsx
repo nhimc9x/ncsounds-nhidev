@@ -41,7 +41,7 @@ function PopularSongs({ dataSongs }) {
               <div className="ml-auto mr-3 hidden text-ncs-text-color text-sm sm:block">
                 {data.author}
               </div>
-              <ToolBoxCustom sx="ml-auto sm:ml-0" linkDownload={data.url} />
+              <ToolBoxCustom sx="ml-auto sm:ml-0" linkDownload={data.url} IDSong={data.id} />
             </div>
           ))}
         </div>

@@ -4,6 +4,7 @@ import { PUBLIC_ROUTES } from './routes/routes'
 import DefaultLayout from './layout/DefaultLayout/Defaultlayout'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import NCSContext from './context/NCSContext/NCSContext'
+import ToolkitContext from './context/ToolkitContext/ToolkitContext'
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
                 path={route.path}
                 element={
                   <Layout>
-                    <Page />
+                    <ToolkitContext>
+                      <Page />
+                    </ToolkitContext>
                   </Layout>
                 }
               />
