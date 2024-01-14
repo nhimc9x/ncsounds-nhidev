@@ -25,7 +25,7 @@ function SongsOfAuthor({ dataSongsOfAuthor }) {
             </div>
             <div className="text-ncs-text-color flex-1 text-limit">{data?.name}</div>
             <div className="">
-              <ToolBar linkDownload={data?.url} />
+              <ToolBar linkDownload={data?.url} IDSong={data?.id} />
             </div>
           </div>
         </div>

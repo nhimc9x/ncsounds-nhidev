@@ -22,7 +22,7 @@ function GridSongsList({ dataSongs }) {
               <div className="text-xs text-ncs-text-color group-hover:text-white transition-all duration-300 text-limit">{data?.author}</div>
             </div>
             <div className="">
-              <ToolBoxCustom linkDownload={data?.url} />
+              <ToolBoxCustom linkDownload={data?.url} IDSong={data?.id}/>
             </div>
           </div>
         </div>

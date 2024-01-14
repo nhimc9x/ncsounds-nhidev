@@ -1,12 +1,12 @@
 import { MdCloudDownload } from 'react-icons/md'
 import { GoHeartFill } from 'react-icons/go'
-import { IoAlbums } from 'react-icons/io5'
 import { useState, useRef, useEffect } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import TooltipCustom from '../TooltipCustom/TooltipCustom'
 import { handleStopPropagation } from '~/utils/StopPropagation'
+import AddToPlaylist from './AddToPlaylist/AddToPlaylist'
 
-function ToolBoxCustom({ sx, linkDownload }) {
+function ToolBoxCustom({ sx, linkDownload, IDSong }) {
 
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef(null)
@@ -71,12 +71,9 @@ function ToolBoxCustom({ sx, linkDownload }) {
           </div>
           <div className="text-xs whitespace-nowrap">Add to favourite</div>
         </div>
-        <div className="flex items-center gap-2 px-2 py-[2px] hover:bg-zinc-700 cursor-pointer">
-          <div className="text-sm">
-            <IoAlbums />
-          </div>
-          <div className="text-xs whitespace-nowrap">Add to album</div>
-        </div>
+
+        <AddToPlaylist IDSong={IDSong} />
+
         <a href={linkDownload} className="flex items-center gap-2 px-2 py-[2px] hover:bg-zinc-700 cursor-pointer">
           <div className="text-sm">
             <MdCloudDownload />

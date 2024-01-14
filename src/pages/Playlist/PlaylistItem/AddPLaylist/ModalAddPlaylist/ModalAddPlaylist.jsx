@@ -91,7 +91,7 @@ function ModalAddPlaylist({ setShowModal }) {
   return (
     <div className="bg-black/50 fixed top-0 right-0 left-0 bottom-0">
       { loading && <Loading />}
-      <div className="bg-ncs-primary-color w-[500px] h-max py-1 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-md">
+      <div className="bg-ncs-primary-color sms:w-[500px] h-max py-1 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-md">
         <div className="flex justify-between p-4">
           <div className="text-3xl text-white">Create a new playlist</div>
           <div
@@ -101,8 +101,8 @@ function ModalAddPlaylist({ setShowModal }) {
             <IoCloseOutline />
           </div>
         </div>
-        <div className="flex h-40 gap-4 px-8">
-          <div className="bg-ncs-secondary-color w-40 rounded-md overflow-hidden relative group">
+        <div className="flex xs:h-40 h-max gap-4 px-8 xs:flex-row flex-col">
+          <div className="bg-ncs-secondary-color xs:w-40 w-full h-40 rounded-md overflow-hidden relative group">
             {imgUpload && (<img className="w-full h-full object-cover object-center group-hover:opacity-10" src={imgUpload.preview} alt="Playlist Image" />)}
             <div style={{ display: !imgUpload && 'block' }} className="absolute top-0 left-0 right-0 bottom-0 hidden group-hover:block">
               <label htmlFor="img-upload" className="w-full h-full text-6xl grid place-content-center text-ncs-text-color cursor-pointer">
