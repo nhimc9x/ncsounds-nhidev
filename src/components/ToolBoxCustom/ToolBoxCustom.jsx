@@ -1,10 +1,10 @@
 import { MdCloudDownload } from 'react-icons/md'
-import { GoHeartFill } from 'react-icons/go'
 import { useState, useRef, useEffect } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import TooltipCustom from '../TooltipCustom/TooltipCustom'
 import { handleStopPropagation } from '~/utils/StopPropagation'
 import AddToPlaylist from './AddToPlaylist/AddToPlaylist'
+import AddToFavourite from './AddToFavourite/AddToFavourite'
 
 function ToolBoxCustom({ sx, linkDownload, IDSong }) {
 
@@ -65,12 +65,8 @@ function ToolBoxCustom({ sx, linkDownload, IDSong }) {
       </TooltipCustom>
 
       {isOpen && (<div className="absolute right-8 -top-2 bg-zinc-800 text-ncs-text-color drop-shadow-sm py-2 rounded-md after:border-t-[10px] after:border-b-[10px] after:border-l-[10px] after:border-t-transparent after:border-b-transparent after:border-l-zinc-800 after:absolute after:-right-[10px] after:top-[10px]">
-        <div className="flex items-center gap-2 px-2 py-[2px] hover:bg-zinc-700 cursor-pointer">
-          <div className="text-sm">
-            <GoHeartFill />
-          </div>
-          <div className="text-xs whitespace-nowrap">Add to favourite</div>
-        </div>
+
+        <AddToFavourite IDSong={IDSong} />
 
         <AddToPlaylist IDSong={IDSong} />
 

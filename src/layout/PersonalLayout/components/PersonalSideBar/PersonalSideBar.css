@@ -1,0 +1,5 @@
+.ct-navlink.active .link-item {
+  @apply after:bg-emerald-500 after:absolute after:top-1/2 after:-translate-y-1/2 after:-left-3 after:rounded-full;
+}
+.ct-navlink.active .link-icon {
+}

@@ -22,8 +22,8 @@ function SideBar() {
 
         <div className="font-medium text-xl text-ncs-text-color mdl:mt-10 mt-8">Library</div>
 
-        <MenuItem to={routes.favourite} icon={<GoHeartFill />} title={'Favourite'} />
         <MenuItem to={routes.playlist} icon={<PiPlaylistBold />} title={'Playlist'} />
+        <MenuItem to={routes.favourite} icon={<GoHeartFill />} title={'Favourite'} />
 
       </div>
     </div>

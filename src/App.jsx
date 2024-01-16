@@ -5,6 +5,7 @@ import DefaultLayout from './layout/DefaultLayout/Defaultlayout'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import NCSContext from './context/NCSContext/NCSContext'
 import ToolkitContext from './context/ToolkitContext/ToolkitContext'
+import AudioPlayerCustom from './components/AudioPlayerCustom/AudioPlayerCustom'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             )
           })}
         </Routes>
+        <AudioPlayerCustom />
       </NCSContext>
     </Router>
   )

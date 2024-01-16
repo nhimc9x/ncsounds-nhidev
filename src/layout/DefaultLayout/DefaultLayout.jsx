@@ -1,12 +1,9 @@
-import AudioPlayerCustom from '~/components/AudioPlayerCustom/AudioPlayerCustom'
 import SideBar from '~/components/SideBar/SideBar'
-import Notication from '~/components/Notication/Notication'
 
 function DefaultLayout({ children }) {
 
   return (
     <div className="h-screen overflow-y-auto">
-      {/* <Notication /> */}
 
       <SideBar />
 
@@ -14,7 +11,6 @@ function DefaultLayout({ children }) {
         <div className=""> {children} </div>
       </div>
 
-      <AudioPlayerCustom />
     </div>
   )
 }

@@ -1,0 +1,18 @@
+.fav-songs-item {
+  @apply h-[52px] py-1 px-3 border-ncs-active-color/20 border-b last:border-b-0 flex justify-between items-center cursor-pointer;
+}
+.fav-songs-item-img {
+  @apply w-full h-full rounded-sm object-cover;
+}
+.fav-songs-icon-play {
+  @apply hidden text-sm absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2;
+}
+.fav-songs-item:hover, .fav-songs-item.is-playing {
+  @apply bg-ncs-active-color/20;
+}
+.fav-songs-item:hover .fav-songs-item-img, .fav-songs-item.is-playing .fav-songs-item-img {
+  @apply brightness-50;
+}
+.fav-songs-item:hover .fav-songs-icon-play, .fav-songs-item.is-playing .fav-songs-icon-play {
+  @apply block;
+}
