@@ -4,7 +4,9 @@ import { useContext } from 'react'
 import { HandleTookit } from '~/hocks/useContext'
 
 function AddToPlaylist({ IDSong }) {
+
   const { setShowModal, setIdSong } = useContext(HandleTookit)
+
   const handleShowModal = () => {
     setShowModal(true)
     setIdSong(IDSong)

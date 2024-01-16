@@ -20,7 +20,7 @@ function PlaylistItem() {
       {dataMyPlaylist?.map((data, index) => (
         <div key={index} className="h-44 bg-ncs-secondary-color relative rounded-md overflow-hidden group hover:rounded-none duration-300">
           <img className="w-full h-full object-cover object-center group-hover:brightness-[.3] duration-300" src={data?.image} alt="" />
-          <div className="absolute bg-black/80 tracking-wider font-light text-white bottom-0 w-full leading-9 px-1 text-limit  group-hover:-bottom-9 duration-300">{data?.title}</div>
+          <div className="absolute bg-black/80 tracking-wider font-light text-white bottom-0 w-full leading-9 px-1 text-limit group-hover:-bottom-9 duration-300">{data?.title}</div>
           <NavLink to={data?.id} className="hidden group-hover:block cursor-pointer absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-7xl text-ncs-active-color">
             <IoPlayCircleOutline />
           </NavLink>

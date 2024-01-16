@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { NCSounds } from '~/hocks/useContext'
 import TitleManager from '~/components/TitleManager/TitleManager'
@@ -12,9 +12,11 @@ import ListSongs from './ListSongs/ListSongs'
 
 function PlayListDetails() {
 
-  const { dataSongs, dataPlaylist, handlePlay, setPlayList } = useContext(NCSounds)
+  const { dataSongs, dataPlaylist, handlePlay, setPlayList, handleDelPlaylist } = useContext(NCSounds)
 
   const { playlistID } = useParams()
+
+  const navigate = useNavigate()
 
   const [myPlaylist, setMyPlaylist] = useState()
 
@@ -42,6 +44,11 @@ function PlayListDetails() {
     setMyPlaylist(updateMyPlaylist)
   }
 
+  const handleDel = (id) => {
+    handleDelPlaylist(id)
+    navigate('/playlist')
+  }
+
   return (
     <>
       <TitleManager title={`NCSounds - ${myPlaylist?.title}`} />
@@ -54,7 +61,7 @@ function PlayListDetails() {
             <div className="h-full flex-1 sms:p-2 p-1 flex flex-col">
               <div className="text-sm">Playlist</div>
               <div className="sms:text-5xl text-2xl text-white font-semibold tracking-wide sms:mt-2 mt-0 text-limit">{myPlaylist?.title}</div>
-              <div className="mt-auto text-white">32 Songs</div>
+              <div className="mt-auto text-white">{`${myPlaylist?.songs?.length} Songs`}</div>
             </div>
           </div>
         </div>
@@ -67,14 +74,14 @@ function PlayListDetails() {
               <FaPlay />
             </div>
             <TooltipCustom decription="Delete playlist">
-              <div className="text-xl w-6 h-6 grid place-content-center text-white hover:text-red-500 cursor-pointer duration-300">
+              <div onClick={() => handleDel(playlistID)} className="text-xl w-6 h-6 grid place-content-center text-white hover:text-red-500 cursor-pointer duration-300">
                 <MdDelete />
               </div>
             </TooltipCustom>
           </div>
 
           {
-            myPlaylist?.songs.length === 0 ?
+            myPlaylist?.songs?.length === 0 ?
               (<div className="text-center font-thin pt-2 pb-6 px-2">
                 <div className="text-white">
                   No songs in the playlist
