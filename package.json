@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "NhiDeveloper",
+  "description": "Dự án Website nghe nhạc",
+  "engines": {
+    "node": "18.18.2"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build --base=./",
