@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { PUBLIC_ROUTES } from '~/routes/routes'
-import DefaultLayout from '~/layout/DefaultLayout/Defaultlayout'
+// import DefaultLayout from '~/layout/DefaultLayout/Defaultlayout'
 import ScrollToTop from '~/components/ScrollToTop/ScrollToTop'
 import NCSContext from '~/context/NCSContext/NCSContext'
 import ToolkitContext from '~/context/ToolkitContext/ToolkitContext'
@@ -28,11 +28,11 @@ function App() {
                 key={index}
                 path={route.path}
                 element={
-                  <DefaultLayout>
+                  <Fragment>
                     <ToolkitContext>
                       <Page />
                     </ToolkitContext>
-                  </DefaultLayout>
+                  </Fragment>
                 }
               />
             )
