@@ -3,7 +3,7 @@
     "_id" : 1,
     "username" : "vuvannhi7703",
     "password" : "bsaBUWsbhwgdv2884",
-    "avatar" : "https://res.cloudinary.com/dqnzb1ieq/image/upload/v1705402262/NCSounds/MESSI_dlvgxi.jpg",
+    "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnYvCjt8NMQ8E0bmYAnfoH3fkbcLae7gzY6A&s",
     "favourite" : {
       "songs" : [1, 3, 5, 7, 9, 13, 33, 44, 76],
       "authors" : ["Alan Walker", "Sơn Tùng"]
@@ -39,7 +39,7 @@
     "_id" : 2,
     "username" : "nhimc9x",
     "password" : "bsaBUWsbhwgdv2884",
-    "avatar" : "https://res.cloudinary.com/dqnzb1ieq/image/upload/v1704776696/NCSounds/b94ut5nvpjkfrvtxrvch.jpg",
+    "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnYvCjt8NMQ8E0bmYAnfoH3fkbcLae7gzY6A&s",
     "favourite" : {
       "songs" : ["Sing me to sleep", "Fade", "Sleep"],
       "author" : ["Alan Walker", "Sơn Tùng"]

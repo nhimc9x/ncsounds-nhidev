@@ -61,15 +61,6 @@ function PersonalSideBar() {
               <TbMusicHeart className="text-2xl" />
             </div>
           </NavLink>
-
-          <NavLink to={'/favourite/#authors'} className="ct-navlink">
-            <div className="link-item mdl:block hidden text-lg font-extralight text-white ml-10 p-1 relative after:size-2">
-              Favorite authors
-            </div>
-            <div className="link-icon mdl:hidden flex items-center border-2 border-white hover:border-ncs-primary-color duration-200 justify-center size-11 text-white rounded-md bg-blue-400 mx-auto hover:text-ncs-primary-color mb-3">
-              <BsPersonHeart className="text-2xl" />
-            </div>
-          </NavLink>
         </div>
 
       </div>
