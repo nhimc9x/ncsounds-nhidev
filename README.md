@@ -46,7 +46,7 @@ This project was built using these technologies.
 
 ## Other
 
-The sources of the songs I gathered from include: `ncs.io`  `jesusful`  `cloudmp3`
+The sources of the songs from: `ncs.io`  `jesusful`  `cloudmp3`
 
 **⚠️ Some links may be broken, I will update them as soon as possible.**
 
