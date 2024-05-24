@@ -15,7 +15,7 @@ function ToolBar({ ...props }) {
       <AddToPlaylist IDSong={props.IDSong} />
 
       <TooltipCustom decription="Download">
-        <a href={props.linkDownload} className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center">
+        <a href={props.linkDownload} target="_blank" className="sms:flex hidden h-7 w-7 hover:bg-ncs-primary-color rounded-full justify-center items-center" rel="noreferrer">
           <MdCloudDownload />
         </a>
       </TooltipCustom>

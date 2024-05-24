@@ -70,7 +70,7 @@ function ToolBoxCustom({ sx, linkDownload, IDSong }) {
 
         <AddToPlaylist IDSong={IDSong} />
 
-        <a href={linkDownload} className="flex items-center gap-2 px-2 py-[2px] hover:bg-zinc-700 cursor-pointer">
+        <a href={linkDownload} target="_blank" className="flex items-center gap-2 px-2 py-[2px] hover:bg-zinc-700 cursor-pointer" rel="noreferrer">
           <div className="text-sm">
             <MdCloudDownload />
           </div>
